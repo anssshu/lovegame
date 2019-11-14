@@ -4,8 +4,11 @@ local walls = {}
 
 function walls:init()
     self.ground = world:newRectangleCollider(0, 550, 8000, 50)
+    self.ground:setCollisionClass("Platform")
     self.wall_left = world:newRectangleCollider(0, 0, 50, 600)
+    self.wall_left:setCollisionClass("Platform")
     self.wall_right = world:newRectangleCollider(7950, 0, 50, 600)
+    self.wall_right:setCollisionClass("Platform")
     
     self.ground:setType('static') -- Types can be 'static', 'dynamic' or 'kinematic'. Defaults to 'dynamic'
     self.wall_left:setType('static')

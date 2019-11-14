@@ -4,6 +4,6 @@ function love.conf(t)
 	t.window.height= 675
 	t.window.title = "Test"
 	t.window.borderless = true
-	t.window.fullscreen = true
+	t.window.fullscreen = false
 
 end

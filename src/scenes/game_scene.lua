@@ -23,7 +23,11 @@ function scene:loadLevel(level)
     self.currentLevel = level
     self.play = false
     self.level = {}
-    -- load all the game levels 
+    -- load demo level ---this is reserved for experiments
+    if level == 0 then
+        self.level = require "src.levels.demo"
+    end
+    --load level 1
     if level ==1 then
         self.level = require "src.levels.level1"
     end

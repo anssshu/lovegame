@@ -5,7 +5,6 @@ local level = {}
 
 -- create a physics world
 wf = require 'libs.ext.windfield'
-hc = require 'libs.ext.HC'
 --draw a backgraound
 
 --draw boundries
@@ -15,18 +14,10 @@ function level:init()
 
     --create a physics world
     world = wf.newWorld(0,0,true)
-    world:setGravity(0,1024)
-    world:addCollisionClass("Player")
-    world:addCollisionClass("Platform")
-    world:addCollisionClass("Others")
-
-    hc_world = hc.new()
-    --hc world circle
-    circle = hc_world:circle(500,550,100)
+    world:setGravity(0,512)
 
     box = world:newRectangleCollider(400 - 50/2, 0, 50, 50)
     box:setRestitution(0.8)
-    box:setCollisionClass("Others")
 
     player = require "src.objects.player"
     player:init()
@@ -55,9 +46,6 @@ function level:draw()
     -- all camera targets to be drawn here
     world:draw()
     player:draw()
-    love.graphics.setColor(1,0,0,1)
-    circle:draw()
-    love.graphics.setColor(1,1,1,1)
     camera:unset()
 end
 
