@@ -2,13 +2,13 @@ local camera = {}
 camera.x = 0
 camera.y = 0
 camera.xoffset = 0
-camera.yoffset = -200
+camera.yoffset = 0
 camera.scaleX = 1
 camera.scaleY = 1
 camera.rotation = 0
 camera.active = true
-camera.w = love.graphics.getWidth()/2
-camera.h = love.graphics.getHeight()/2
+camera.w = camera.scaleX*game.settings.x_res/2
+camera.h = camera.scaleY*game.settings.y_res/2
 
 camera.target = {x=camera.w,y=camera.h}
 function camera:update(dt)

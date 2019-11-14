@@ -33,7 +33,7 @@ function player:init()
     self.onground = false
 end
 function love.keypressed(k)
-    if k == "up" and player.onground then
+    if k == "w" and player.onground then
         player.collider:applyLinearImpulse(0,-1000)
     end
 end
@@ -41,13 +41,13 @@ function player:input()
     local x,y = self.collider:getLinearVelocity()
     --print(x,y)
     local n=(x*x+y*y)^.5
-    if love.keyboard.isDown("left") then
+    if love.keyboard.isDown("a") then
        
         if n < self.maxVel then
             self.collider:applyLinearImpulse(-self.f,0)
         end
     
-    elseif love.keyboard.isDown("right") then
+    elseif love.keyboard.isDown("d") then
         if n < self.maxVel then
             self.collider:applyLinearImpulse(self.f,0)
         end
@@ -60,7 +60,7 @@ function player:input()
 end
 --ray cast call back
 function callback(a,b,c,d,e,f)
-    print(a,b,c,d,e,f)
+    --print(a,b,c,d,e,f)
     if f < 0.7 then 
         player.onground = true
     else 

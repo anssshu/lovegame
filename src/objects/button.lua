@@ -23,9 +23,8 @@ local Button = function(x,y,w,h,text)
         love.graphics.setColor(1,1,1,1)
     end
     function self:update(dt)
-        local x = love.mouse.getX()
-        local y = love.mouse.getY()
-    
+        local x = love.mouse.getX()/game.sx
+        local y = love.mouse.getY()/game.sy
         --if the button cursor is inside the rectangle 
         if x>self.x  and x < self.x+self.w  and y > self.y and y < self.y+self.h then
             self.a = .5

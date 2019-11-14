@@ -7,8 +7,8 @@ local Button = require "src.objects.button"
 local menu = {}
 
 function menu:init()
-    self.W = love.graphics.getWidth()
-    self.H = love.graphics.getHeight()
+    self.W = game.settings.x_res
+    self.H = game.settings.y_res
 
     self.w = 200
     self.h = 40
